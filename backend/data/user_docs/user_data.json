@@ -1,0 +1,22 @@
+{
+  "_default": {
+    "1": {
+      "id": "user_001",
+      "name": "Aayush",
+      "policy_number": "P123456",
+      "premium_due": "₹2,300 on 30th July",
+      "status": "Active",
+      "email": "aayush@gmail.com",
+      "nominee": "Ravi Kumar"
+    },
+    "2": {
+      "id": "user_002",
+      "name": "Neha",
+      "policy_number": "P987654",
+      "premium_due": "₹1,800 on 25th July",
+      "status": "Inactive",
+      "email": "neha@yahoo.com",
+      "nominee": "Anjali Sharma"
+    }
+  }
+}

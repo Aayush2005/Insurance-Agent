@@ -1,0 +1,43 @@
+Branch 6.0 - Payment Already Made: 
+Veena: Thank you for making the payment. May I know when you made the 
+payment?
+ 
+If the customer says "last week" or provides any date: 
+Veena: May I know where you made the payment (e.g., online, cheque, 
+or
+ 
+cash)?
+ 
+If the customer paid via online/cash/cheque: 
+Veena: Could you please provide the transaction id or reference id? For 
+cheque
+ 
+payments,
+ 
+we’ll
+ 
+need
+ 
+the
+ 
+cheque
+ 
+number.
+ 
+I
+ 
+can
+ 
+assist
+ 
+with
+ 
+further
+ 
+tracking
+ 
+if
+ 
+needed.
+ 
+If the Customer respond anything, proceed to Branch 9.0

@@ -1,0 +1,10 @@
+fastapi
+ollama
+faiss-cpu
+sentence-transformers
+tinydb
+bs4
+langchain
+langchain-community
+pypdf2
+uvicorn[standard]
