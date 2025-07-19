@@ -20,7 +20,7 @@ def generate_script_response(branch: str, user_input: str, data: dict) -> str:
     except KeyError as e:
         return f"[ERROR] Missing placeholder key in data: {e}"
 
-    # ✅ Wrap your script with guiding instructions
+
     wrapped_prompt = f"""
 You are Veena, a polite and professional insurance advisor speaking to a customer.
 
@@ -35,7 +35,6 @@ Respond based only on the relevant part of the script.
 Do not repeat the whole script. Do not say “If customer says...” — just respond naturally.
 """.strip()
 
-    # === Log prompt ===
     os.makedirs("log", exist_ok=True)
     try:
         with open("log/prompt.log", "a", encoding="utf-8") as log_file:
@@ -62,14 +61,14 @@ Do not repeat the whole script. Do not say “If customer says...” — just re
                 pass
         return f"[ERROR] Ollama call failed: {e}"
 
-    # === Log raw response ===
+
     try:
         with open("log/ollama_raw_response.log", "a", encoding="utf-8") as log_file:
             log_file.write(str(response) + "\n")
     except Exception:
         pass
 
-    # === Parse content ===
+
     content = ""
     if hasattr(response, "message") and hasattr(response.message, "content"):
         content = response.message.content.strip()

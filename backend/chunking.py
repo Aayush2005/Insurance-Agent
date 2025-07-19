@@ -5,20 +5,19 @@ from PyPDF2 import PdfReader
 INPUT_PDF = "data/company_docs/Calling_Script.pdf"
 OUTPUT_DIR = "prompts"
 
-# Ensure prompt folder exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Read PDF content
 reader = PdfReader(INPUT_PDF)
 raw_text = "\n".join(page.extract_text() for page in reader.pages)
 
-# Split by Branch headings (e.g. "Branch 1.0 - Initial Greeting")
-pattern = r"(Branch\s+\d+\.\d+.*?)\n(?=Branch\s+\d+\.\d+|\Z)"  # greedy capture till next branch
+# Split by Branch headings
+pattern = r"(Branch\s+\d+\.\d+.*?)\n(?=Branch\s+\d+\.\d+|\Z)"  
 matches = re.findall(pattern, raw_text, flags=re.DOTALL)
 
-# Save each branch as a .txt file
+
 for match in matches:
-    # Extract branch number for filename
+
     branch_match = re.search(r"Branch\s+(\d+)\.(\d+)", match)
     if not branch_match:
         continue

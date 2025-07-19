@@ -1,7 +1,7 @@
 import ollama
 import os
 
-from config import KNOWN_INTENTS  # Load from config or external file
+from config import KNOWN_INTENTS  
 
 def load_prompt(path: str) -> str:
     if not os.path.exists(path):

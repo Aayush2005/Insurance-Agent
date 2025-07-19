@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 import re
 
 def clean_text(raw_text):
-    text = re.sub(r'\s+', ' ', raw_text)  # normalize whitespace
-    text = re.sub(r'http\S+|www\S+', '', text)  # remove links
-    text = re.sub(r'[^A-Za-z0-9\s.,!?\'"-]', '', text)  # remove special chars
+    text = re.sub(r'\s+', ' ', raw_text) 
+    text = re.sub(r'http\S+|www\S+', '', text)  
+    text = re.sub(r'[^A-Za-z0-9\s.,!?\'"-]', '', text)  
     return text.strip()
 
 def scrape_multiple_and_append(urls, output_file='combined_output.txt'):
