@@ -1,20 +1,25 @@
-
 from intent_classifier import classify_intent
 from rag_pipeline import retrieve_context
 from response_generator import generate_script_response
 from user_data_handler import fetch_user_data
 from call_flow import determine_branch
+from stt import record_audio, transcribe_audio
 
 def main():
-    print("Insurance Voice Agent Terminal Interface\n")
+    print("🎙 Insurance Voice Agent Terminal Interface\n")
     user_id = input("Enter user ID (or leave blank): ").strip()
+    
     while True:
-        user_text = input("Ask your question (or type 'exit' to quit): ").strip()
+        print("🎤 Speak now (5 seconds)... or type 'exit' to quit.")
+        audio_path = record_audio()
+        user_text = transcribe_audio(audio_path)
+        print(f"🧑 You said: {user_text}\n")
+
         if user_text.lower() == "exit":
             print("Goodbye!")
             break
-        if not user_text:
-            print("[ERROR] Empty input.")
+        if not user_text.strip():
+            print("[ERROR] Could not hear clearly, please try again.")
             continue
 
         intent = classify_intent(user_text)
@@ -39,7 +44,8 @@ def main():
         branch = determine_branch(user_text, intent)
         final_response = generate_script_response(branch, user_text, policy_data)
 
-        print(final_response)
+        print("🤖 Agent:", final_response)
+        print("—" * 60)
 
 if __name__ == "__main__":
     main()
