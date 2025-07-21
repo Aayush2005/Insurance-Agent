@@ -82,9 +82,10 @@ Retrieve Static + User Context 📚 → Mistral 7B → TTS 🎧 → Response
    ollama pull mistral
    ```
 
-2. 📚 Index knowledge base:
+2. 📚 Install requirements:
    ```bash
-   python vector_db/build_index.py
+   cd backend
+   pip install -r requirements.txt
    ```
 
 3. 🚀 Start the backend:
