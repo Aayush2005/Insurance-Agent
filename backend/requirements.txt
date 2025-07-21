@@ -8,3 +8,4 @@ langchain
 langchain-community
 pypdf2
 uvicorn[standard]
+deep-translator
