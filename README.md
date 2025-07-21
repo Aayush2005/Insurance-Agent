@@ -126,4 +126,4 @@ MIT © Aayush Kumar Singh
 
 > A voice agent isn’t just about answers —  
 > it’s about clarity, care, and speed.  
-> Yours delivers all three. 🧠⚡🫶
+> Mine delivers all three. 🧠⚡🫶
